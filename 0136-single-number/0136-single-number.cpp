@@ -1,11 +1,11 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-     sort(nums.begin(),nums.end());
+     int c = 0;
      if(nums.size()==1) return nums[0];
-     for(int i = 0;i<nums.size();i+=2){
-         if(nums[i]!=nums[i+1]) return nums[i];
+     for(int i = 0;i<nums.size();i++){
+         c^=nums[i];
      }
-     return -1;
+     return c;
     }
 };
